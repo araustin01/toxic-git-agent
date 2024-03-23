@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  gitlab-runner:
+    privileged: true
+    image: ghcr.io/araustin01/toxic-git-agent:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
