@@ -9,7 +9,9 @@ echo "GITLAB_RUNNER_TOKEN is: ${GITLAB_RUNNER_TOKEN}"
 gitlab-runner register \
     --non-interactive \
     --url https://git.cs.vt.edu/ \
-    --executor 'docker' \
+    --executor docker \
+    --docker-privileged \
+    --docker-volumes "/certs/client" \
     --docker-image ubuntu:latest \
     --description 'toxic-runner' \
     --token ${GITLAB_RUNNER_TOKEN}
