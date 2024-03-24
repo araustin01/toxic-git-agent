@@ -3,8 +3,6 @@
 # Run built-in Docker startup commands
 dockerd-entrypoint.sh &
 
-echo "GITLAB_RUNNER_TOKEN is: ${GITLAB_RUNNER_TOKEN}"
-
 # Run custom GitLab Runner commands
 gitlab-runner register \
     --non-interactive \
